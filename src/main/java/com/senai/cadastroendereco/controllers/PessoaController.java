@@ -54,7 +54,7 @@ public class PessoaController {
     //Método de login
     @PostMapping("/login")
     public Pessoa login(@RequestBody Pessoa loginRequest) { //a senha e o email digitado está sendo armazenado no loginRequest, e agora estamos chamando os seus valores e armazenando nos parâmetros desse método lá no service
-    	Pessoa pessoa = pessoaService.autenticarPessoa(loginRequest.getEmail(), loginRequest.getSenha()); //Criamos um objeto somente para chamar o autenticarPessoa e verificar as credenciais, e esse objeto armazena o resultado do autenticarPessoa do service (pessoa ou null)
+    	Pessoa pessoa = pessoaService.autenticarPessoa(loginRequest.getEmail(), loginRequest.getSenha()); //Criamos um objeto somente para chamar o autenticarPessoa e verificar as credenciais, e esse objeto armazena o resultado do autenticarPessoa do service, pessoa (somente se OS DOIS VALORES ESTIVEREM CORRETOS) ou null
     	
     	if(pessoa != null) {
     		return pessoa;
